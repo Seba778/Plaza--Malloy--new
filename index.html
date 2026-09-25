@@ -349,18 +349,6 @@ footer{border-top:1px solid rgba(194,160,82,.15);background:#040302}
     <div style="text-align:center;margin:30px 0 4px">
       <a href="/gran-baile" style="display:inline-block;background:linear-gradient(90deg,#C2A052,#E0C07A);color:#1a1509;font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:13px;padding:17px 40px;border-radius:999px;text-decoration:none;box-shadow:0 16px 34px -10px rgba(194,160,82,.6);border:none;cursor:pointer;font-family:inherit">Compra tus boletos aquí</a>
     </div>
-
-    <div class="cross">
-      <p class="lbl">No te pierdas estos eventos</p>
-      <div class="cross-grid">
-        <div class="cross-item">
-          <img src="assets/bandafest-flyer.jpg" alt="Banda Fest · Domingo 18 de Octubre">
-        </div>
-        <div class="cross-item">
-          <img src="assets/luchalibre-flyer.jpg" alt="Lucha Libre · Sábado 3 de Octubre, 2026">
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- ====================== ABOUT ====================== -->
@@ -575,7 +563,7 @@ function resetUI(){
 
 function estadoDe(n){
   n = parseInt(n,10);
-  if (OCUPADAS_DB.indexOf(n) > -1) return 'vendida';      // pagada (desde Supabase)
+  if (OCUPADAS_DB.indexOf(n) > -1) return 'vendida';      // pagada (dessde Supabase)
   if (BLOQUEADAS.indexOf(n) > -1) return 'bloqueada';     // bloqueo manual local
   return 'libre';
 }
@@ -646,4 +634,4 @@ function confirmar(n, cat){
 }
 </script>
 </body>
-</html>
+</html> 

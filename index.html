@@ -153,7 +153,7 @@ section{margin-bottom:120px}
 
 /* About */
 .about{position:relative;border-radius:4rem;overflow:hidden;border:1px solid rgba(194,160,82,.1);background:var(--bg-soft);padding:64px 40px}
-.about:before,.about:after{content:"";position:absolute;left:0;width:100%;height:1px}
+.about:before,.about:after{content:"absolute";left:0;width:100%;height:1px}
 .about:before{top:0;background:linear-gradient(90deg,transparent,rgba(194,160,82,.3),transparent)}
 .about:after{bottom:0;background:linear-gradient(90deg,transparent,rgba(194,160,82,.2),transparent)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
@@ -327,7 +327,7 @@ footer{border-top:1px solid rgba(194,160,82,.15);background:#040302}
     </div>
     <p style="color:var(--muted-3);font-size:9px;text-transform:uppercase;letter-spacing:.2em;margin-bottom:40px">Ferris, TX · Plaza Malloy Arena</p>
 
-    <div class="flyer-card">
+    <div class="flyer-card" id="gran-baile">
       <img src="assets/granbaile-flyer.jpg" alt="Gran Baile · Sábado 31 de Octubre, 2026">
       <div class="overlay"></div>
       <div class="info">
@@ -347,7 +347,7 @@ footer{border-top:1px solid rgba(194,160,82,.15);background:#040302}
     </div>
 
     <div style="text-align:center;margin:30px 0 4px">
-      <a href="/gran-baile" style="display:inline-block;background:linear-gradient(90deg,#C2A052,#E0C07A);color:#1a1509;font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:13px;padding:17px 40px;border-radius:999px;text-decoration:none;box-shadow:0 16px 34px -10px rgba(194,160,82,.6);border:none;cursor:pointer;font-family:inherit">Compra tus boletos aquí</a>
+      <button onclick="openModal()" style="display:inline-block;background:linear-gradient(90deg,#C2A052,#E0C07A);color:#1a1509;font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:13px;padding:17px 40px;border-radius:999px;text-decoration:none;box-shadow:0 16px 34px -10px rgba(194,160,82,.6);border:none;cursor:pointer;font-family:inherit">Compra tus boletos aquí</button>
     </div>
   </section>
 
@@ -563,7 +563,7 @@ function resetUI(){
 
 function estadoDe(n){
   n = parseInt(n,10);
-  if (OCUPADAS_DB.indexOf(n) > -1) return 'vendida';      // pagada (dessde Supabase)
+  if (OCUPADAS_DB.indexOf(n) > -1) return 'vendida';      // pagada (desde Supabase)
   if (BLOQUEADAS.indexOf(n) > -1) return 'bloqueada';     // bloqueo manual local
   return 'libre';
 }
@@ -634,4 +634,4 @@ function confirmar(n, cat){
 }
 </script>
 </body>
-</html> 
+</html>

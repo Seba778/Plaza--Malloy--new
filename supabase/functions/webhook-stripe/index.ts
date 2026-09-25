@@ -14,15 +14,16 @@ const supabase = createClient(
   Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
 );
 const WH_SECRET     = Deno.env.get("STRIPE_WEBHOOK_SECRET")!;
-const WEB3FORMS_KEY = Deno.env.get("WEB3FORMS_KEY");   // aviso para TI (opcional)
-const RESEND_KEY    = Deno.env.get("RESEND_API_KEY");  // correo para el CLIENTE (opcional)
+const WEB3FORMS_KEY = Deno.env.get("WEB3FORMS_KEY");   // aviso para TI (dueño)
+const RESEND_KEY    = Deno.env.get("RESEND_API_KEY");  // correo para el CLIENTE
 const RESEND_FROM   = Deno.env.get("RESEND_FROM") || "Plaza Malloy Arena <onboarding@resend.dev>";
 
 const NOMBRES: Record<string,string> = {
-  tamaulipas: "Los Dos de Tamaulipas",
-  fantasma:   "El Fantasma",
-  rienda:     "Rienda Real y Pócima Norteña",
-  zenda:      "La Zenda Norteña",
+  "gran-baile": "Gran Baile",
+  tamaulipas:   "Los Dos de Tamaulipas",
+  fantasma:     "El Fantasma",
+  rienda:       "Rienda Real y Pócima Norteña",
+  zenda:        "La Zenda Norteña",
 };
 const DIRECCION = "Plaza Malloy Arena, 2141 Malloy Bridge Rd, Ferris, TX 75125";
 
@@ -39,21 +40,26 @@ Deno.serve(async (req) => {
 
   if (event.type === "checkout.session.completed") {
     const session = event.data.object as any;
-    const ref: string = session.client_reference_id || "";   // ej: tamaulipas-Mesa-23
+    const ref: string = session.client_reference_id || "";   // ej: gran-baile-Mesa-23
     const email: string | null = session.customer_details?.email ?? null;
     const nombre: string = session.customer_details?.name ?? "";
 
-    const m = ref.match(/^([a-zA-Z]+)-Mesa-(\d+)$/);
+    // Regex actualizada para soportar guiones en el slug del evento
+    const m = ref.match(/^(.+)-Mesa-(\d+)$/i);
     if (m) {
       const evento = m[1].toLowerCase();
       const numero = parseInt(m[2], 10);
       const eventoNombre = NOMBRES[evento] || evento;
 
       // 1) marca la mesa como vendida
-      await supabase.from("mesas").upsert(
+      const { error } = await supabase.from("mesas").upsert(
         { evento, numero, estado: "vendida", email },
         { onConflict: "evento,numero" }
       );
+
+      if (error) {
+        console.error("Error al actualizar Supabase:", error);
+      }
 
       // 2) aviso para TI (dueño)
       if (WEB3FORMS_KEY) {

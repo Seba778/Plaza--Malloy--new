@@ -20,6 +20,7 @@ const RESEND_FROM   = Deno.env.get("RESEND_FROM") || "Plaza Malloy Arena <onboar
 
 const NOMBRES: Record<string,string> = {
   "gran-baile": "Gran Baile",
+  pescadores:   "Los Pescadores del Río Conchos, Nueva Pradera & Más",
   tamaulipas:   "Los Dos de Tamaulipas",
   fantasma:     "El Fantasma",
   rienda:       "Rienda Real y Pócima Norteña",

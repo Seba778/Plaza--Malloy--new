@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Plaza Malloy Arena · Gran Baile</title>
+<title>Plaza Malloy Arena · Los Pescadores del Río Conchos</title>
 <style>
 /* ==================================================================
    VARIANTES DE COLOR  (edita aquí para retematizar todo el sitio)
@@ -119,17 +119,6 @@ section{margin-bottom:120px}
 .section-head{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:12px}
 .section-head .l{height:1px;width:48px;background:rgba(122,98,58,.5)}
 
-/* Video */
-.video-eyebrow{display:flex;align-items:center;gap:12px;color:var(--amber-500);font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.4em;margin-bottom:32px}
-.video-frame{position:relative;border-radius:2.5rem;overflow:hidden;border:1px solid rgba(194,160,82,.2);aspect-ratio:16/9;box-shadow:0 40px 80px -20px rgba(0,0,0,.8)}
-.video-frame video{width:100%;height:100%;object-fit:cover;transform:scale(1.05)}
-.video-frame .fade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8),transparent 60%)}
-.corner{position:absolute;width:32px;height:32px;border:2px solid rgba(194,160,82,.6)}
-.corner.tl{top:24px;left:24px;border-right:0;border-bottom:0;border-radius:8px 0 0 0}
-.corner.tr{top:24px;right:24px;border-left:0;border-bottom:0;border-radius:0 8px 0 0}
-.corner.bl{bottom:24px;left:24px;border-right:0;border-top:0;border-radius:0 0 0 8px}
-.corner.br{bottom:24px;right:24px;border-left:0;border-top:0;border-radius:0 0 8px 0}
-
 /* Eventos */
 .events{text-align:center}
 .flyer-card{position:relative;border-radius:3rem;overflow:hidden;border:1px solid rgba(194,160,82,.25);box-shadow:0 40px 80px -20px rgba(0,0,0,.8);max-width:760px;margin:0 auto}
@@ -142,43 +131,11 @@ section{margin-bottom:120px}
 .meta svg{color:var(--amber-500)}
 .btn-primary{background:var(--amber);color:#fff;font-weight:900;padding:16px 40px;border-radius:999px;text-transform:uppercase;letter-spacing:.15em;font-size:12px;transition:background .25s,transform .25s;box-shadow:0 20px 40px -12px rgba(194,160,82,.5)}
 .btn-primary:hover{background:var(--amber-500);transform:translateY(-1px)}
-.cross{margin-top:56px}
-.cross .lbl{color:var(--muted-2);font-size:10px;text-transform:uppercase;letter-spacing:.4em;font-weight:700;margin-bottom:24px}
-.cross-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,300px));gap:24px;max-width:1000px;margin:0 auto;justify-content:center}
-.cross-item img{width:100%;border-radius:1.5rem;border:1px solid rgba(194,160,82,.25);transition:transform .6s}
-.cross-item:hover img{transform:scale(1.03)}
-.cross-item .pill{display:inline-block;margin-top:16px;background:var(--amber);color:#fff;font-weight:900;padding:12px 28px;border-radius:999px;text-transform:uppercase;letter-spacing:.15em;font-size:11px;transition:background .25s}
-.cross-item:hover .pill{background:var(--amber-500)}
-@media(max-width:900px){.cross-grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.cross-grid{grid-template-columns:1fr}}
-
-/* About */
-.about{position:relative;border-radius:4rem;overflow:hidden;border:1px solid rgba(194,160,82,.1);background:var(--bg-soft);padding:64px 40px}
-.about:before,.about:after{content:"absolute";left:0;width:100%;height:1px}
-.about:before{top:0;background:linear-gradient(90deg,transparent,rgba(194,160,82,.3),transparent)}
-.about:after{bottom:0;background:linear-gradient(90deg,transparent,rgba(194,160,82,.2),transparent)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.about h2{font-size:clamp(40px,6vw,72px);font-weight:900;text-transform:uppercase;letter-spacing:-.04em;line-height:1;margin:16px 0}
-.about h2 .accent{color:var(--amber)}
-.about .story{color:#d6d3d1;font-size:18px;line-height:1.7;font-style:italic;font-weight:300;margin-top:8px}
-.about .figures{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:24px;margin-top:24px;border-top:1px solid var(--line)}
-.about .figures .n{color:var(--amber-500);font-weight:900;font-size:36px}
-.about .figures .c{color:var(--muted-2);text-transform:uppercase;font-size:9px;letter-spacing:.15em;font-weight:700;margin-top:4px}
-.mv{background:rgba(0,0,0,.4);padding:32px;border-radius:2rem;border:1px solid rgba(194,160,82,.1);transition:border-color .4s}
-.mv+.mv{margin-top:20px}
-.mv:hover{border-color:rgba(194,160,82,.3)}
-.mv .h{display:flex;align-items:center;gap:16px;color:var(--amber);margin-bottom:16px}
-.mv .h h4{font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.05em}
-.mv p{color:var(--muted);font-size:14px;line-height:1.7}
-@media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:40px}}
-
-/* Galería */
-.gallery{text-align:center}
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
-.gallery-grid .cell{position:relative;border-radius:2rem;overflow:hidden;border:1px solid rgba(194,160,82,.1);aspect-ratio:4/3;background:#1c1917}
-.gallery-grid .cell img{width:100%;height:100%;object-fit:cover;opacity:.72;transition:transform .7s,opacity .5s}
-.gallery-grid .cell:hover img{transform:scale(1.1);opacity:1}
-@media(max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.gallery-grid{grid-template-columns:1fr}}
+.corner{position:absolute;width:32px;height:32px;border:2px solid rgba(194,160,82,.6)}
+.corner.tl{top:24px;left:24px;border-right:0;border-bottom:0;border-radius:8px 0 0 0}
+.corner.tr{top:24px;right:24px;border-left:0;border-bottom:0;border-radius:0 8px 0 0}
+.corner.bl{bottom:24px;left:24px;border-right:0;border-top:0;border-radius:0 0 0 8px}
+.corner.br{bottom:24px;right:24px;border-left:0;border-top:0;border-radius:0 0 8px 0}
 
 /* Footer */
 footer{border-top:1px solid rgba(194,160,82,.15);background:#040302}
@@ -262,8 +219,6 @@ footer{border-top:1px solid rgba(194,160,82,.15);background:#040302}
 .fixed-info .d{display:flex;align-items:center;gap:8px;color:var(--amber-500);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
 .fixed-info .a{display:flex;align-items:center;gap:8px;color:#d6d3d1;font-size:11px;margin-top:4px}
 @media(max-width:640px){.fixed-info{display:none}}
-
-.preview-badge{position:fixed;top:70px;left:50%;transform:translateX(-50%);z-index:70;background:rgba(194,160,82,.15);border:1px solid rgba(194,160,82,.4);color:var(--amber-400);font-size:10px;text-transform:uppercase;letter-spacing:.2em;font-weight:700;padding:6px 18px;border-radius:999px;backdrop-filter:blur(6px)}
 </style>
 </head>
 <body>
@@ -273,7 +228,7 @@ footer{border-top:1px solid rgba(194,160,82,.15);background:#040302}
   <div class="topline"></div>
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="#top" class="brand">
+      <a href="index.html" class="brand">
         <span class="logo"><img src="assets/logo.png" alt="Logo Plaza Malloy Arena"></span>
         <span>
           <span class="name">Plaza Malloy Arena</span><br>
@@ -281,171 +236,57 @@ footer{border-top:1px solid rgba(194,160,82,.15);background:#040302}
         </span>
       </a>
       <div class="navlinks">
-        <a href="#eventos">Eventos</a>
-        <a href="#nosotros">About Us</a>
-        <a href="#eventos" class="btn-outline"><span>Upcoming Events</span></a>
+        <a href="index.html#eventos">Eventos</a>
+        <a href="index.html#nosotros">About Us</a>
+        <button class="btn-outline" onclick="openModal()"><span>Reservar Mesa VIP</span></button>
       </div>
     </div>
   </nav>
 </div>
 
-
-
-<!-- ====================== HERO ====================== -->
-<header class="hero" id="top">
+<!-- ====================== HERO DEL EVENTO ====================== -->
+<header class="hero" id="top" style="padding-bottom:24px">
   <div class="top-eyebrow">
     <span class="l" style="background:linear-gradient(90deg,transparent,rgba(194,160,82,.7))"></span>
-    <span class="eyebrow">Selección VIP Exclusiva</span>
+    <span class="eyebrow">Próximo Evento · Gran Baile</span>
     <span class="l" style="background:linear-gradient(270deg,transparent,rgba(194,160,82,.7))"></span>
   </div>
-  <h1>PLAZA <span class="accent">MALLOY</span></h1>
+  <h1 style="font-size:clamp(34px,6.5vw,80px)">LOS PESCADORES<br><span class="accent">DEL RÍO CONCHOS</span></h1>
   <div class="divider"><span class="l" style="width:48px"></span><span class="d"></span><span class="l" style="width:96px"></span><span class="d"></span><span class="l" style="width:48px"></span></div>
-  <p class="quote">"Bienvenido a Plaza Malloy Arena, la casa del jaripeo y el baile ranchero en el Metroplex, donde cada mesa está pensada para vivir la fiesta como se debe"</p>
-  </header>
+  <p class="quote" style="font-style:normal;font-weight:600;color:#d6d3d1">Nueva Pradera &amp; Más</p>
+  <p class="quote">Sábado 14 de Noviembre, 2026 · 6:00 PM · 2141 Malloy Bridge Rd, Ferris, TX</p>
+</header>
 
-<main>
-  <!-- ====================== VIDEO ====================== -->
-  <section>
-    <div class="video-eyebrow">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> La Arena
-    </div>
-    <div class="video-frame">
-      <video src="assets/preview.mp4" autoplay muted loop playsinline></video>
-      <div class="fade"></div>
-      <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-    </div>
-  </section>
-
-  <!-- ====================== EVENTOS ====================== -->
-  <section class="events" id="eventos">
-    <div class="section-head">
-      <span class="l"></span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--amber-500)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-      <span class="eyebrow">Upcoming Events</span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--amber-500)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-      <span class="l"></span>
-    </div>
-    <p style="color:var(--muted-3);font-size:9px;text-transform:uppercase;letter-spacing:.2em;margin-bottom:40px">Ferris, TX · Plaza Malloy Arena</p>
-
-    <div class="flyer-card" id="gran-baile">
-      <img src="assets/granbaile-flyer.jpg" alt="Gran Baile · Sábado 31 de Octubre, 2026">
-      <div class="overlay"></div>
-      <div class="info">
-        <div>
-          <p class="eyebrow" style="margin-bottom:8px">Próximo Evento</p>
-          <h3>Gran Baile</h3>
-          <div class="meta" style="margin-top:8px">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            <span>Sábado 31 de Octubre, 2026</span><span style="color:var(--muted-3)">·</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Ferris, TX</span>
-          </div>
-        </div>
-        
-      </div>
-      <span class="corner tl"></span><span class="corner tr"></span>
-    </div>
-
-    <!-- BOTONES ACTUALIZADOS -->
-    <div style="text-align:center; margin:30px 0 4px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap">
-      
-      <!-- BOTÓN 1: Ticketón (Boletos Generales) -->
-      <a href="https://ticketon.com/events/gran-baile-fierra-de-ojinaga---mas-ferris-tx-2026-10-31-ebpwzke8jnah" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(90deg,#C2A052,#E0C07A);color:#1a1509;font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:13px;padding:17px 40px;border-radius:999px;text-decoration:none;box-shadow:0 16px 34px -10px rgba(194,160,82,.6);">Comprar Boletos (Ticketón)</a>
-      
-      <!-- BOTÓN 2: Mesas VIP (Abre el Modal que ya tenías) -->
-      <button onclick="openModal()" style="display:inline-block;background:transparent;color:var(--amber-400);border:1px solid rgba(194,160,82,.6);font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:13px;padding:17px 40px;border-radius:999px;cursor:pointer;font-family:inherit;">Reserva tu Mesa VIP</button>
-
-    </div>
-
-    <!-- ====================== EVENTO: LOS PESCADORES ====================== -->
-    <div class="flyer-card" id="los-pescadores" style="margin-top:80px">
+<main style="margin-top:16px">
+  <!-- ====================== FLYER + BOTONES ====================== -->
+  <section class="events">
+    <div class="flyer-card">
       <img src="assets/lospescadores-flyer.jpg" alt="Los Pescadores del Río Conchos, Nueva Pradera &amp; Más · Sábado 14 de Noviembre, 2026">
       <div class="overlay"></div>
       <div class="info">
         <div>
-          <p class="eyebrow" style="margin-bottom:8px">Próximo Evento</p>
+          <p class="eyebrow" style="margin-bottom:8px">Sábado 14 de Noviembre, 2026 · 6:00 PM</p>
           <h3>Los Pescadores del Río Conchos, Nueva Pradera &amp; Más</h3>
           <div class="meta" style="margin-top:8px">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            <span>Sábado 14 de Noviembre, 2026 · 6:00 PM</span><span style="color:var(--muted-3)">·</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Ferris, TX</span>
+            <span>Plaza Malloy Arena · Ferris, TX</span>
           </div>
         </div>
       </div>
       <span class="corner tl"></span><span class="corner tr"></span>
     </div>
 
-    <!-- BOTONES DEL NUEVO EVENTO -->
     <div style="text-align:center; margin:30px 0 4px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap">
+
+      <!-- BOTÓN 1: Ticketón (Boletos Generales) -->
       <a href="https://ticketon.com/events/los-pescadores-del-rio-conchos-nueva-pradera--mas-ferris-tx-2026-11-14-uxekqb5sx1zi?code=mB9dLe&amp;tk_tl=08qnflk" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(90deg,#C2A052,#E0C07A);color:#1a1509;font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:13px;padding:17px 40px;border-radius:999px;text-decoration:none;box-shadow:0 16px 34px -10px rgba(194,160,82,.6);">Comprar Boletos (Ticketón)</a>
+
+      <!-- BOTÓN 2: EventMania (Boletos Generales) -->
       <a href="https://eventmania.com/es/events/gran-bailazo-plaza-malloy-arena-ferris-tx-2026-11-14/Xnpm" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(90deg,#94a3b8,#e2e8f0);color:#0f172a;font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:13px;padding:17px 40px;border-radius:999px;text-decoration:none;box-shadow:0 16px 34px -10px rgba(148,163,184,.5);">Comprar Boletos (EventMania)</a>
-      <a href="los-pescadores.html" style="display:inline-block;background:transparent;color:var(--amber-400);border:1px solid rgba(194,160,82,.6);font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:13px;padding:17px 40px;border-radius:999px;text-decoration:none;">Reserva tu Mesa VIP</a>
-    </div>
 
-    <div class="cross">
-      <div class="lbl">Próximamente en la Arena</div>
-      <div class="cross-grid">
-        <div class="cross-item">
-          <img src="assets/luchalibre-flyer.jpg" alt="Lucha Libre">
-        </div>
-        <div class="cross-item">
-          <img src="assets/bandafest-flyer.jpg" alt="Banda Fest">
-        </div>
-      </div>
-    </div>
-  </section>
+      <!-- BOTÓN 2: Mesas VIP (Abre el Modal) -->
+      <button onclick="openModal()" style="display:inline-block;background:transparent;color:var(--amber-400);border:1px solid rgba(194,160,82,.6);font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:13px;padding:17px 40px;border-radius:999px;cursor:pointer;font-family:inherit;">Reserva tu Mesa VIP</button>
 
-  <!-- ====================== ABOUT ====================== -->
-  <section class="about" id="nosotros">
-    <div class="about-grid">
-      <div>
-        <p style="color:var(--amber-900);font-size:9px;text-transform:uppercase;letter-spacing:.5em;font-weight:700">Nuestra Historia</p>
-        <h2>ABOUT <span class="accent">US</span></h2>
-        <div style="display:flex;align-items:center;gap:12px"><span style="height:2px;width:64px;background:var(--amber)"></span><span class="d" style="width:6px;height:6px;background:var(--amber);transform:rotate(45deg);display:inline-block"></span></div>
-        <p class="story">Plaza Malloy Arena nació en Ferris, Texas, como el nuevo punto de encuentro del jaripeo y el baile ranchero en el Metroplex. Bajo su gran techo de acero rojo se combinan la fuerza del ruedo, el mejor sonido y una hospitalidad de primer nivel, para vivir cada evento como se debe: en grande.</p>
-        <div class="figures">
-          <div><div class="n">5,000+</div><div class="c">Aforo Total</div></div>
-          <div><div class="n">54</div><div class="c">Mesas VIP</div></div>
-        </div>
-      </div>
-      <div>
-        <div class="mv">
-          <div class="h">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-            <h4>Nuestra Misión</h4>
-          </div>
-          <p>Llevar a Ferris y a todo el norte de Texas los mejores jaripeos, norteñas y bailes, con una experiencia de mesa VIP cómoda, segura y a la altura de los grandes artistas que pisan nuestro escenario.</p>
-        </div>
-        <div class="mv">
-          <div class="h">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-            <h4>Nuestra Visión</h4>
-          </div>
-          <p>Ser la arena de referencia del Metroplex para la música regional mexicana y el jaripeo, el lugar donde las familias y la raza saben que siempre hay un evento que no se pueden perder.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== GALERÍA ====================== -->
-  <section class="gallery">
-    <div class="section-head">
-      <span class="l"></span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--amber-500)"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.7L5.8 21l1.6-7L2 9.5l7.1-.6z"/></svg>
-      <span class="eyebrow">Exclusive Suite Gallery</span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--amber-500)"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.7L5.8 21l1.6-7L2 9.5l7.1-.6z"/></svg>
-      <span class="l"></span>
-    </div>
-    <div class="gallery-grid">
-      <div class="cell"><img src="assets/arena-1.jpg" alt="Escenario techado"></div>
-      <div class="cell"><img src="assets/arena-2.jpg" alt="Gradas y escenario"></div>
-      <div class="cell"><img src="assets/arena-3.jpg" alt="Vista aérea de las gradas"></div>
-      <div class="cell"><img src="assets/arena-4.jpg" alt="Vista aérea del ruedo"></div>
-      <div class="cell"><img src="assets/arena-5.jpg" alt="Vista aérea general"></div>
-      <div class="cell"><img src="assets/arena-6.jpg" alt="Interior iluminado de noche"></div>
-      <div class="cell"><img src="assets/arena-7.jpg" alt="Ruedo con mesas de noche"></div>
-      <div class="cell"><img src="assets/arena-8.jpg" alt="Panorámica del ruedo"></div>
     </div>
   </section>
 </main>
@@ -490,12 +331,11 @@ footer{border-top:1px solid rgba(194,160,82,.15);background:#040302}
     </button>
     <div>
       <span class="eyebrow">Reservando para</span>
-      <h2>Gran Baile</h2>
-      <p class="subtitle">Sábado 31 de Octubre, 2026 · 2141 Malloy Bridge Rd, Ferris, TX 75125</p>
+      <h2>Los Pescadores del Río Conchos</h2>
+      <p class="subtitle">Nueva Pradera &amp; Más · Sábado 14 de Noviembre, 2026 · 6:00 PM · 2141 Malloy Bridge Rd, Ferris, TX 75125</p>
       <div class="divider" style="justify-content:flex-start"><span class="l" style="width:48px"></span><span class="d"></span><span class="l" style="width:48px"></span></div>
     </div>
 
-    <!-- AQUÍ SE ACTUALIZÓ LA RUTA A LA NUEVA IMAGEN DEL MAPA -->
     <div class="map-wrap"><img src="assets/mapa-mesas.jpg" alt="Mapa de mesas VIP"></div>
 
     <div class="select-eyebrow">
@@ -544,7 +384,7 @@ footer{border-top:1px solid rgba(194,160,82,.15);background:#040302}
     <div class="card">
       <div class="d">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        Sábado 31 de Octubre, 2026
+        Sábado 14 de Noviembre, 2026 · 6:00 PM
       </div>
       <div class="a">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--amber-500)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -564,8 +404,8 @@ var PRECIOS = { gold: 500, silver: 400 };
 
 /* 1) STRIPE, links de pago de este evento */
 var PAGO = {
-  gold:   "https://buy.stripe.com/14AcN66wx2707Mh3dG2cg0a",
-  silver: "https://buy.stripe.com/00wcN64opdPI5E9dSk2cg0b"
+  gold:   "https://buy.stripe.com/14AeVedYZbHA0jP7tW2cg0c",
+  silver: "https://buy.stripe.com/bJe14of336ngfeJ01u2cg0d"
 };
 
 /* 2) MESAS BLOQUEADAS (no disponibles).
@@ -573,7 +413,7 @@ var PAGO = {
    Ejemplo:  var BLOQUEADAS = [];
    Para liberar una mesa, quítala de la lista y vuelve a subir el archivo. */
 var BLOQUEADAS = [];
-var SLUG = "gran-baile";
+var SLUG = "pescadores";
 
 /* 3) SUPABASE (bloqueo automático de mesas pagadas).
    Pega la URL de tu proyecto y la clave "anon" (pública). */
@@ -585,8 +425,6 @@ var NUMS = {
   gold:   Array.from({length:14}, function(_,i){return i+1}),
   silver: Array.from({length:40}, function(_,i){return i+15})
 };
-/* Estados de ejemplo para mostrar libre / vendida / bloqueada */
-
 
 var selCat = null, selTable = null;
 

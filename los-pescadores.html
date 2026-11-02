@@ -426,13 +426,15 @@ var NUMS = {
   silver: Array.from({length:40}, function(_,i){return i+15})
 };
 
-var selCat = null, selTable = null;
+var selCat = null, selTable = null, enviando = false;
 
 /* Navbar shrink al hacer scroll */
 cargarOcupadasDB();
 window.addEventListener('scroll', function(){
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
 });
+/* Al volver desde Stripe con "atrás", permite confirmar de nuevo */
+window.addEventListener('pageshow', function(){ enviando = false; });
 
 function openModal(){ document.getElementById('modal').classList.add('open'); document.body.style.overflow='hidden'; cargarOcupadasDB(function(){ if(selCat) selectCategory(selCat); }); }
 function closeModal(){ document.getElementById('modal').classList.remove('open'); document.body.style.overflow=''; selCat=null; selTable=null; resetUI(); }
@@ -512,9 +514,27 @@ function confirmar(n, cat){
     alert('Falta el link de pago de Stripe para las mesas '+cat.toUpperCase()+'.');
     return;
   }
+  if(enviando) return;
+  enviando = true;
   var ref = SLUG + '-Mesa-' + n;
   var url = link + (link.indexOf('?')>-1?'&':'?') + 'client_reference_id=' + encodeURIComponent(ref);
-  window.location.href = url;
+  // Aparta la mesa 30 min en Supabase antes de ir a Stripe
+  fetch(SUPABASE_URL + '/rest/v1/rpc/reservar_mesa', {
+    method: 'POST',
+    headers: { apikey: SUPABASE_ANON, Authorization: 'Bearer ' + SUPABASE_ANON, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ p_evento: SLUG, p_numero: n })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(ok){
+    if(ok === false){   // otra persona la tomó
+      enviando = false;
+      alert('La mesa #'+n+' acaba de ser reservada por otra persona. Por favor elige otra.');
+      cargarOcupadasDB(function(){ selectCategory(cat); });
+      return;
+    }
+    window.location.href = url;   // reservada (o Supabase no respondió: se sigue como antes)
+  })
+  .catch(function(){ window.location.href = url; });
 }
 </script>
 </body>
